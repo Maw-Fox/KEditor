@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "out": "chat3.js",
+    	"noResolve": true,
+        "removeComments": true,
+    	"target": "es5"
+    },
+    "files": [
+    	"../lib/vue.d.ts",
+    	"module.ts",
+        "classes.ts",
+        "interfaces.ts"
+    ]
+}
