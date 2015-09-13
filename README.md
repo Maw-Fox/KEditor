@@ -1,2 +1,2 @@
 # KEditor
-Kali's RP Editor
+Kali's F-Chat RP editor
