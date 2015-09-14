@@ -29,6 +29,28 @@ module Editor {
             }
         });
 
-        Main.$watch('input', inputOnChange)
+        Main.$watch('input', inputOnChange);
+
+        export var Modal = new Vue({
+            el: '#modal',
+            data: {
+                modalActive: false,
+                component: 'repeats',
+                heading: 'Repeated Words Analysis',
+                stats: Stats
+            },
+            methods: {
+                close: function(): void {
+                    this.modalActive = false;
+                    return;
+                }
+            },
+            components: {
+                repeats: {
+                    template: '#repeats-template',
+                    inherit: true
+                }
+            }
+        });
     }
 }

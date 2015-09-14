@@ -2,17 +2,43 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <title>
+            KEditor v0.0.1
+        </title>
         <!-- INCLUDED APIS -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.14/vue.min.js"></script>
         <link rel="stylesheet" href="../style/kedit.css"></style>
         <!-- END INCLUDE -->
     </head>
     <body>
+        <div
+            id="modal"
+            v-show="modalActive"
+            v-on="click: close"
+            v-transition
+        >
+            <div class="inner">
+                <div class="heading">
+                    {{ heading }}
+                </div>
+                <div class="content">
+                    <div v-component="{{ component }}"></div>
+                </div>
+            </div>
+            <script id="repeats-template" type="x-template">
+                <div class="repeats-word-list" v->
+                    <div v-repeat="stats.repeated._value | orderBy '$value' -1">
+                        {{ $key }}: {{ $value }}
+                    </div>
+                </div>
+            </script>
+        </div>
         <div id="editor" class="editor">
             <div id="statistics" class="stats">
                 <button
                     v-repeat="stat: stats"
                     id="{{* stat.id }}"
+                    title="{{* stat.help }}"
                     v-on="click: stat.onClick"
                     v-class="clickable: stat.onClick"
                 >{{* stat.display }}: {{ stat.value }}</button>
@@ -29,6 +55,6 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="../scripts/kedit.js"></script>
     </body>
-    <script type="text/javascript" src="../scripts/kedit.js"></script>
 </html>
