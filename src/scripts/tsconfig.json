@@ -1,14 +1,15 @@
 {
     "compilerOptions": {
-        "out": "chat3.js",
+        "out": "kedit.js",
     	"noResolve": true,
         "removeComments": true,
     	"target": "es5"
     },
     "files": [
-    	"../lib/vue.d.ts",
+    	"../../lib/vue.d.ts",
     	"module.ts",
         "classes.ts",
-        "interfaces.ts"
+        "interfaces.ts",
+        "ui.ts"
     ]
 }

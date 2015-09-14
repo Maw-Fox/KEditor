@@ -3,26 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <!-- INCLUDED APIS -->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-git2.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.14/vue.min.js"></script>
         <!-- END INCLUDE -->
     </head>
     <body>
-        <div class="main-container">
-            <div class="statistics-container">
-                <div id="length" class="statistic">
-                    Length:
-                </div>
-                <div id="words" class="statistic">
-                    Word Count:
-                </div>
-                <div id="repeated" class="statistic">
-                    Repeated Words:
-                </div>
-                <div id="timer" class="statistic">
-                    00:00:00
-                </div>
+        <div id="editor">
+            <div id="statistics">
+                <button
+                    v-repeat="stat: stats"
+                    id="{{* stat.id }}"
+                    class="stat"
+                    v-on="click: stat.onClick"
+                    v-class="clickable: stat.onClick"
+                >{{* stat.display }}: {{ stat.value }}</button>
             </div>
-            <textarea id="input" class="main-input"></textarea>
+            <textarea v-model="input"></textarea>
             <div class="functions-container">
                 <div id="toggle" class="func-button">
                     Toggle Timer
@@ -46,4 +41,5 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="../scripts/kedit.js"></script>
 </html>
