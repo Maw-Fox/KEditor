@@ -4,40 +4,28 @@
         <meta charset="UTF-8" />
         <!-- INCLUDED APIS -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.14/vue.min.js"></script>
+        <link rel="stylesheet" href="../style/kedit.css"></style>
         <!-- END INCLUDE -->
     </head>
     <body>
-        <div id="editor">
-            <div id="statistics">
+        <div id="editor" class="editor">
+            <div id="statistics" class="stats">
                 <button
                     v-repeat="stat: stats"
                     id="{{* stat.id }}"
-                    class="stat"
                     v-on="click: stat.onClick"
                     v-class="clickable: stat.onClick"
                 >{{* stat.display }}: {{ stat.value }}</button>
             </div>
             <textarea v-model="input"></textarea>
-            <div class="timer-functions">
-                Timer:
-                <button v-on="click: stats.timer.startTick">
-                    Start
-                </button>
-                <button v-on="click: stats.timer.stopTick">
-                    Stop
-                </button>
-            </div>
-        </div>
-        <div id="window" class="overhead">
-            <div class="header">
-                <div id="heading">
-                    Heading
-                </div>
-                <div id="close" title="Close"></div>
-            </div>
-            <div class="overhead-body">
-                <div id="body" class="wrap">
-                    text
+            <div class="functions">
+                <div class="timer">
+                    Timer:
+                    <button class="clickable" v-on="click: stats.timer.startTick">
+                        Start
+                    </button><button class="clickable" v-on="click: stats.timer.stopTick">
+                        Stop
+                    </button>
                 </div>
             </div>
         </div>

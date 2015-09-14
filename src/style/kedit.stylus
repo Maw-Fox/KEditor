@@ -1,0 +1,56 @@
+bgc(r, g, b, a = 1)
+	background-color rgba(r, g, b, a)
+
+*, *:before, *:after
+	font-size 12px
+	font-family Verdana
+	box-sizing border-box
+
+body
+	position absolute
+	margin 0px
+	padding 0px
+	height 100%
+	width 100%
+	overflow hidden
+
+.clickable
+	cursor pointer
+	
+button
+	padding 4px
+	padding-left 8px
+	padding-right 8px
+	border 1px solid black
+	margin-right 6px
+	border-radius 3px
+	transition all 0.25s ease
+
+button:hover
+	bgc(0, 0, 0, 0.25)
+	transition all 0.25s ease
+
+.functions > div
+	display inline-block
+	padding 6px
+	border-radius 3px
+	border 1px solid black
+	
+.timer > button:last-child
+	margin-right 0px
+
+.editor
+	position absolute
+	height 100%
+	width 100%
+	padding 5px
+
+textarea
+	position relative
+	display block
+	margin-top 5px
+	margin-bottom 5px
+	height calc(100% - 80px)
+	height -webkit-calc(100% - 80px)
+	width 100%
+	resize none
