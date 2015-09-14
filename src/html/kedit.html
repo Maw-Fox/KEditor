@@ -18,13 +18,14 @@
                 >{{* stat.display }}: {{ stat.value }}</button>
             </div>
             <textarea v-model="input"></textarea>
-            <div class="functions-container">
-                <div id="toggle" class="func-button">
-                    Toggle Timer
-                </div>
-                <div id="reset" class="func-button">
-                    Reset Timer
-                </div>
+            <div class="timer-functions">
+                Timer:
+                <button v-on="click: stats.timer.startTick">
+                    Start
+                </button>
+                <button v-on="click: stats.timer.stopTick">
+                    Stop
+                </button>
             </div>
         </div>
         <div id="window" class="overhead">
