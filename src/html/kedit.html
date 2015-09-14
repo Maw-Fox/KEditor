@@ -26,11 +26,21 @@
                 </div>
             </div>
             <script id="repeats-template" type="x-template">
-                <div class="repeats-word-list" v->
+                <div class="repeats-word-list">
+                    {{{ highlights }}}
+                </div>
+                <div class="repeats-word-list">
                     <div v-repeat="stats.repeated._value | orderBy '$value' -1">
                         {{ $key }}: {{ $value }}
                     </div>
                 </div>
+            </script>
+            <script id="grouping-template" type="x-template">
+                <span
+                    class="group"
+                    v-class="highlight: highlight === {{* id }}"
+                    v-on="enter: highlight = {{* id }}, leave: highlight = null"
+                ><content></content></span>
             </script>
         </div>
         <div id="editor" class="editor">

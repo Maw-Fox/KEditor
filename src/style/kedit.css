@@ -124,3 +124,9 @@ textarea {
   background-color: rgba(255,255,255,0.5);
   border-radius: 3px;
 }
+.group {
+  font-weight: bold;
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+}

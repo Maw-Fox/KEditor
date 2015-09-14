@@ -8,6 +8,8 @@
 /// <reference path="./classes.ts" />
 
 module Editor {
+    export var input: string = localStorage['input'] || '';
+
     export module Stats {
         export module characters {
             export var id = 'characters';
